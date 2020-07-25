@@ -1,0 +1,14 @@
+<h1>Photos</h1>
+
+<%= form_with(url: root_path, method: :get, local: true) do %>
+  <%= label_tag(:user_id, "Flickr ID here: ")%>
+  <%= text_field_tag(:user_id)%>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% if @photos%>
+  <h1> Photo List</h1>
+  <%@photos.each do |photo|%>
+    <%=photo%>
+  <%end%>
+<%end%>
